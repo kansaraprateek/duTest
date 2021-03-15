@@ -10,8 +10,6 @@
 		3DBBD56B2A2551FBF240218E /* Pods_duTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788B64BDB2864CEEF6BCD07A /* Pods_duTest.framework */; };
 		C6748C4325F88682002ADA3E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6748C4225F88682002ADA3E /* DatabaseManager.swift */; };
 		C6748C4825F886B2002ADA3E /* du.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C6748C4625F886B2002ADA3E /* du.xcdatamodeld */; };
-		C677C30425F88928002FA63C /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677C30325F88928002FA63C /* Post+CoreDataClass.swift */; };
-		C677C30525F88928002FA63C /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677C30225F88928002FA63C /* Post+CoreDataProperties.swift */; };
 		C677C30825F889CD002FA63C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677C30725F889CD002FA63C /* Helpers.swift */; };
 		C677C30B25F899E6002FA63C /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677C30A25F899E6002FA63C /* PostTableViewController.swift */; };
 		C677C30E25F89F9F002FA63C /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677C30D25F89F9F002FA63C /* FavoriteViewController.swift */; };
@@ -19,6 +17,8 @@
 		C677C31825F8B602002FA63C /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677C31725F8B602002FA63C /* MoreViewController.swift */; };
 		C693044425FF849B00545475 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693044325FF849A00545475 /* DefaultsManager.swift */; };
 		C693044E25FF8D0800545475 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693044D25FF8D0800545475 /* KeychainManager.swift */; };
+		C693045525FF9DDC00545475 /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693045325FF9DDC00545475 /* Post+CoreDataClass.swift */; };
+		C693045625FF9DDC00545475 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693045425FF9DDC00545475 /* Post+CoreDataProperties.swift */; };
 		C6E3176225F79329008DD6EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3176125F79329008DD6EA /* AppDelegate.swift */; };
 		C6E3176625F79329008DD6EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3176525F79329008DD6EA /* LoginViewController.swift */; };
 		C6E3176925F79329008DD6EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6E3176725F79329008DD6EA /* Main.storyboard */; };
@@ -45,8 +45,6 @@
 		BC7A2499B432A1273687D1F1 /* Pods-duTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-duTest.release.xcconfig"; path = "Target Support Files/Pods-duTest/Pods-duTest.release.xcconfig"; sourceTree = "<group>"; };
 		C6748C4225F88682002ADA3E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C6748C4725F886B2002ADA3E /* du.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = du.xcdatamodel; sourceTree = "<group>"; };
-		C677C30225F88928002FA63C /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Post+CoreDataProperties.swift"; path = "/Users/prateekkansara/Documents/Code/iOS/duTest/duTest/Posts/Model/Post+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		C677C30325F88928002FA63C /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Post+CoreDataClass.swift"; path = "/Users/prateekkansara/Documents/Code/iOS/duTest/duTest/Posts/Model/Post+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		C677C30725F889CD002FA63C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		C677C30A25F899E6002FA63C /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		C677C30D25F89F9F002FA63C /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +52,8 @@
 		C677C31725F8B602002FA63C /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		C693044325FF849A00545475 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		C693044D25FF8D0800545475 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		C693045325FF9DDC00545475 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C693045425FF9DDC00545475 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C6E3175E25F79329008DD6EA /* duTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = duTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E3176125F79329008DD6EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6E3176525F79329008DD6EA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -306,8 +306,8 @@
 		C6E317BF25F7EE09008DD6EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C677C30325F88928002FA63C /* Post+CoreDataClass.swift */,
-				C677C30225F88928002FA63C /* Post+CoreDataProperties.swift */,
+				C693045325FF9DDC00545475 /* Post+CoreDataClass.swift */,
+				C693045425FF9DDC00545475 /* Post+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -438,6 +438,7 @@
 				C677C30E25F89F9F002FA63C /* FavoriteViewController.swift in Sources */,
 				C6E3176625F79329008DD6EA /* LoginViewController.swift in Sources */,
 				C677C31225F8B26E002FA63C /* BaseTabBarViewController.swift in Sources */,
+				C693045625FF9DDC00545475 /* Post+CoreDataProperties.swift in Sources */,
 				C6E3179C25F7B473008DD6EA /* ReactiveExtensions.swift in Sources */,
 				C693044E25FF8D0800545475 /* KeychainManager.swift in Sources */,
 				C6E317B925F7CBC6008DD6EA /* LoginResponse.swift in Sources */,
@@ -448,15 +449,14 @@
 				C6E3177825F79461008DD6EA /* Credentials.swift in Sources */,
 				C6E317B625F7B9F9008DD6EA /* APIManager.swift in Sources */,
 				C6E317AE25F7B6E0008DD6EA /* LoadingViewable.swift in Sources */,
+				C693045525FF9DDC00545475 /* Post+CoreDataClass.swift in Sources */,
 				C6E317C825F7EF5B008DD6EA /* PostViewModel.swift in Sources */,
 				C6E3178C25F7A016008DD6EA /* LoginViewModel.swift in Sources */,
 				C677C30825F889CD002FA63C /* Helpers.swift in Sources */,
-				C677C30525F88928002FA63C /* Post+CoreDataProperties.swift in Sources */,
 				C6E317A825F7B5C8008DD6EA /* LoadingView.swift in Sources */,
 				C6748C4825F886B2002ADA3E /* du.xcdatamodeld in Sources */,
 				C6E317A425F7B590008DD6EA /* Loader.swift in Sources */,
 				C693044425FF849B00545475 /* DefaultsManager.swift in Sources */,
-				C677C30425F88928002FA63C /* Post+CoreDataClass.swift in Sources */,
 				C677C30B25F899E6002FA63C /* PostTableViewController.swift in Sources */,
 				C6E3179725F7B3FF008DD6EA /* BaseViewModel.swift in Sources */,
 				C6E317CE25F7F758008DD6EA /* PostsTableViewCell.swift in Sources */,
