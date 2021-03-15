@@ -65,11 +65,6 @@ class LoginViewModel : BaseViewModel{
 
     override init() {}
     
-//    Not Used
-//    init(credentials : Credentials) {
-//        self.credentials = credentials
-//    }
-    
     /// Update existing credential object
     /// - Parameters:
     ///   - username: username entered in email field

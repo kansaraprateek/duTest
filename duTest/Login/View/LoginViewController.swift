@@ -147,23 +147,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
+        self.view.endEditing(true)
         login()
       }
-    
-    /// Method to check login on
-    func checkLogin()  {
-        self.view.endEditing(true)
-        let credentials = Credentials(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "")
-        loginViewModel.updateCredentials(credentials: credentials)
-          //Here we check user's credentials input - if it's correct we call login()
-//          switch loginViewModel.credentialsInput() {
-//          case .Correct:
-//            loginButton.isEnabled = true
-//          case .Incorrect:
-//            loginButton.isEnabled = false
-//              return
-//          }
-    }
     
     func login() {
             loginViewModel.login()
@@ -199,9 +185,5 @@ extension LoginViewController: UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-//        checkLogin()
     }
 }
