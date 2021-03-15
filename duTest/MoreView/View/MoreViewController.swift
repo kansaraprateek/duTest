@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import RxCocoa
+import RxSwift
 
 //TODO: Added only for Logout button
 class MoreViewController: UIViewController {
@@ -44,6 +46,11 @@ extension MoreViewController : UITableViewDelegate{
         switch indexPath.row {
         case 0:
             if let parentAsTab = self.parent as? BaseTabBarViewController{
+                if let username = DefaultsManager.get(for: "username"){
+                    KeyChainManager.remove(key: username)
+                    DefaultsManager.remove(for: "username")
+                }
+                
                 parentAsTab.dismiss(animated: true, completion: nil)
             }
             break

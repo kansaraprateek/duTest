@@ -17,7 +17,40 @@ class LoginViewModel : BaseViewModel{
     var credentialsErrorMessage     = PublishSubject<String>()
     var isUsernameFieldHighlighted  = PublishSubject<Bool>()
     var isPasswordFieldHighlighted  = PublishSubject<Bool>()
-    var loginSuccess                = PublishSubject<Bool>()
+    var loginSuccess                = BehaviorRelay<Bool>(value: false)
+    
+    let usernameRelay = PublishSubject<String?>()
+    let passwordRelay = PublishSubject<String?>()
+
+    let autoLoginBinding = PublishSubject<Credentials>()
+    
+    var isValid: Observable<CredentialsInputStatus>{
+
+//        Had to provide a startWith value as combineLatest would only be occured if all the observable has emitted at least one value
+        return Observable.combineLatest(usernameRelay.asObservable().startWith(nil), passwordRelay.asObservable().startWith(nil)){
+            (username, password) in
+            
+            switch (true){
+            case username == nil || password == nil:
+                return .Ignore
+            case username!.isEmpty && password!.isEmpty:
+                return .Incorrect("Please provide username and password.")
+            case username!.isEmpty:
+                return .Incorrect("Username field is empty.")
+            case !NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}").evaluate(with: username):
+                return .Incorrect("Invalid Email.")
+            case password!.isEmpty:
+                return .Incorrect("Password field is empty.")
+            case !(8...15).contains(password!.trimmingCharacters(in: .whitespacesAndNewlines).count):
+                return .Incorrect("Password should be minimum 8 charters, and maximum 15 characters")
+            default:
+                break
+            }
+            self.credentials = Credentials(username: username!, password: password!)
+            return .Correct
+        }
+
+    }
     
     /// Credentials object to store username and passwords
     private var credentials = Credentials() {
@@ -32,9 +65,10 @@ class LoginViewModel : BaseViewModel{
 
     override init() {}
     
-    init(credentials : Credentials) {
-        self.credentials = credentials
-    }
+//    Not Used
+//    init(credentials : Credentials) {
+//        self.credentials = credentials
+//    }
     
     /// Update existing credential object
     /// - Parameters:
@@ -57,8 +91,15 @@ class LoginViewModel : BaseViewModel{
         self.loading.onNext(true)
         let seconds = 2.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            
+//          Store login credentials
+            let data = self.credentials.password.data(using: .utf8)
+            DefaultsManager.set(for: "username", value: self.credentials.username)
+            _ = KeyChainManager.save(key: self.credentials.username, data: data!)
+            
             self.loading.onNext(false)
-            self.loginSuccess.onNext(true)
+            DefaultsManager.set(for: defaults.autoLogin.rawValue, value: true)
+            self.loginSuccess.accept(true)
         }
         
         
@@ -73,38 +114,52 @@ class LoginViewModel : BaseViewModel{
             
     }
     
+    func checkAutoLogin(){
+        if let username = DefaultsManager.get(for: "username"){
+            if let loginDetails = KeyChainManager.load(key: username){
+                if let password = String(data: loginDetails, encoding: .utf8){
+                    let lCredentials = Credentials(username: username, password: password)
+                       self.credentials = lCredentials
+                    self.autoLoginBinding.onNext(lCredentials)
+                       login()
+                }
+            }
+        }
+    }
+    
+    // Refactored as per the new changes
     /// Credentials Input check
     /// - Returns: .Correct, if credentials are correct, else .Incorrect
-    func credentialsInput() -> CredentialsInputStatus {
-        if username.isEmpty && password.isEmpty {
-            credentialsErrorMessage.onNext("Please provide username and password.")
-            return .Incorrect
-        }
-        if username.isEmpty {
-            credentialsErrorMessage.onNext("Username field is empty.")
-            isUsernameFieldHighlighted.onNext(true)
-            return .Incorrect
-        }
-        if password.isEmpty {
-            credentialsErrorMessage.onNext("Password field is empty.")
-            isPasswordFieldHighlighted.onNext(true)
-            return .Incorrect
-        }
-        
-        if !isValidEmail(username){
-            credentialsErrorMessage.onNext("Invalid Email.")
-            isUsernameFieldHighlighted.onNext(true)
-            return .Incorrect
-        }
-        
-        if password.trimmingCharacters(in: .whitespacesAndNewlines).count <= 8 || password.trimmingCharacters(in: .whitespacesAndNewlines).count >= 15 {
-            credentialsErrorMessage.onNext("Password should be minimum 8 charters, and maximum 15 characters")
-            isPasswordFieldHighlighted.onNext(true)
-            return .Incorrect
-        }
-            
-        return .Correct
-    }
+//    func credentialsInput(_ username : String = "", password : String = "") -> CredentialsInputStatus {
+//        if username.isEmpty && password.isEmpty {
+//            credentialsErrorMessage.onNext("Please provide username and password.")
+//            return .Incorrect
+//        }
+//        if username.isEmpty {
+//            credentialsErrorMessage.onNext("Username field is empty.")
+//            isUsernameFieldHighlighted.onNext(true)
+//            return .Incorrect
+//        }
+//        if password.isEmpty {
+//            credentialsErrorMessage.onNext("Password field is empty.")
+//            isPasswordFieldHighlighted.onNext(true)
+//            return .Incorrect
+//        }
+//
+//        if !isValidEmail(username){
+//            credentialsErrorMessage.onNext("Invalid Email.")
+//            isUsernameFieldHighlighted.onNext(true)
+//            return .Incorrect
+//        }
+//
+//        if password.trimmingCharacters(in: .whitespacesAndNewlines).count <= 8 || password.trimmingCharacters(in: .whitespacesAndNewlines).count >= 15 {
+//            credentialsErrorMessage.onNext("Password should be minimum 8 charters, and maximum 15 characters")
+//            isPasswordFieldHighlighted.onNext(true)
+//            return .Incorrect
+//        }
+//
+//        return .Correct
+//    }
     
     /// Valid Email check
     /// - Parameter email: email address to be check against regex
@@ -115,11 +170,19 @@ class LoginViewModel : BaseViewModel{
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
+    
+    
+    
 }
 
 extension LoginViewModel {
-    enum CredentialsInputStatus {
+    enum CredentialsInputStatus{
         case Correct
-        case Incorrect
+        case Ignore
+        case Incorrect(String)
+    }
+    
+    enum defaults : String{
+        case autoLogin = "AutoLogin"
     }
 }

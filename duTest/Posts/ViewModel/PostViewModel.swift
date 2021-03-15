@@ -29,9 +29,9 @@ class PostViewModel: BaseViewModel {
             DatabaseManager.shared.saveContext()
             self?.searchPosts?.onNext("")
             print(posts as Any)
-        }, failed: { [weak self]
+        }, failed: {
             errorMessage in
-            
+            print(errorMessage!)
         })
     }
     

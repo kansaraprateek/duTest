@@ -17,6 +17,8 @@
 		C677C30E25F89F9F002FA63C /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677C30D25F89F9F002FA63C /* FavoriteViewController.swift */; };
 		C677C31225F8B26E002FA63C /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677C31125F8B26E002FA63C /* BaseTabBarViewController.swift */; };
 		C677C31825F8B602002FA63C /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C677C31725F8B602002FA63C /* MoreViewController.swift */; };
+		C693044425FF849B00545475 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693044325FF849A00545475 /* DefaultsManager.swift */; };
+		C693044E25FF8D0800545475 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693044D25FF8D0800545475 /* KeychainManager.swift */; };
 		C6E3176225F79329008DD6EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3176125F79329008DD6EA /* AppDelegate.swift */; };
 		C6E3176625F79329008DD6EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E3176525F79329008DD6EA /* LoginViewController.swift */; };
 		C6E3176925F79329008DD6EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6E3176725F79329008DD6EA /* Main.storyboard */; };
@@ -50,6 +52,8 @@
 		C677C30D25F89F9F002FA63C /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		C677C31125F8B26E002FA63C /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 		C677C31725F8B602002FA63C /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		C693044325FF849A00545475 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
+		C693044D25FF8D0800545475 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		C6E3175E25F79329008DD6EA /* duTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = duTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E3176125F79329008DD6EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6E3176525F79329008DD6EA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -120,9 +124,25 @@
 		C677C31625F8B5F6002FA63C /* MoreView */ = {
 			isa = PBXGroup;
 			children = (
-				C677C31725F8B602002FA63C /* MoreViewController.swift */,
+				C693044825FF855C00545475 /* View Model */,
+				C693044625FF855400545475 /* View */,
 			);
 			path = MoreView;
+			sourceTree = "<group>";
+		};
+		C693044625FF855400545475 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C677C31725F8B602002FA63C /* MoreViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C693044825FF855C00545475 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		C6E3175525F79328008DD6EA = {
@@ -214,6 +234,8 @@
 				C6E317B025F7B9B0008DD6EA /* Network */,
 				C6E3179B25F7B473008DD6EA /* ReactiveExtensions.swift */,
 				C677C30725F889CD002FA63C /* Helpers.swift */,
+				C693044325FF849A00545475 /* DefaultsManager.swift */,
+				C693044D25FF8D0800545475 /* KeychainManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -417,6 +439,7 @@
 				C6E3176625F79329008DD6EA /* LoginViewController.swift in Sources */,
 				C677C31225F8B26E002FA63C /* BaseTabBarViewController.swift in Sources */,
 				C6E3179C25F7B473008DD6EA /* ReactiveExtensions.swift in Sources */,
+				C693044E25FF8D0800545475 /* KeychainManager.swift in Sources */,
 				C6E317B925F7CBC6008DD6EA /* LoginResponse.swift in Sources */,
 				C677C31825F8B602002FA63C /* MoreViewController.swift in Sources */,
 				C6E317C525F7EED0008DD6EA /* PostViewController.swift in Sources */,
@@ -432,6 +455,7 @@
 				C6E317A825F7B5C8008DD6EA /* LoadingView.swift in Sources */,
 				C6748C4825F886B2002ADA3E /* du.xcdatamodeld in Sources */,
 				C6E317A425F7B590008DD6EA /* Loader.swift in Sources */,
+				C693044425FF849B00545475 /* DefaultsManager.swift in Sources */,
 				C677C30425F88928002FA63C /* Post+CoreDataClass.swift in Sources */,
 				C677C30B25F899E6002FA63C /* PostTableViewController.swift in Sources */,
 				C6E3179725F7B3FF008DD6EA /* BaseViewModel.swift in Sources */,
@@ -585,7 +609,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = duTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,7 +629,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = duTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
