@@ -31,15 +31,15 @@ class LoginViewModel : BaseViewModel{
             (username, password) in
             
             switch (true){
-            case username == nil || password == nil:
+            case username == nil && password == nil:
                 return .Ignore
-            case username!.isEmpty && password!.isEmpty:
+            case username?.isEmpty ?? true && password?.isEmpty ?? true:
                 return .Incorrect("Please provide username and password.")
-            case username!.isEmpty:
+            case username?.isEmpty ?? true:
                 return .Incorrect("Username field is empty.")
             case !NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}").evaluate(with: username):
                 return .Incorrect("Invalid Email.")
-            case password!.isEmpty:
+            case password?.isEmpty ?? true:
                 return .Incorrect("Password field is empty.")
             case !(8...15).contains(password!.trimmingCharacters(in: .whitespacesAndNewlines).count):
                 return .Incorrect("Password should be minimum 8 charters, and maximum 15 characters")

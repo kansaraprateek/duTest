@@ -3,4 +3,129 @@
    uuid = "7798D415-AD17-42EA-B0A0-A6EA9D26A9A0"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20558CED-1953-46F9-93F1-33EB436D3CA8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "duTest/Login/ViewModel/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "isValid"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "20558CED-1953-46F9-93F1-33EB436D3CA8 - deb63c9be32779"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; duTest.LoginViewModel.CredentialsInputStatus in duTest.LoginViewModel.isValid.getter : RxSwift.Observable&lt;duTest.LoginViewModel.CredentialsInputStatus&gt;"
+                  moduleName = "duTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/prateekkansara/Documents/Code/iOS/duTest/duTest/Login/ViewModel/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "45">
+               </Location>
+               <Location
+                  uuid = "20558CED-1953-46F9-93F1-33EB436D3CA8 - deb63c9be32779"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; duTest.LoginViewModel.CredentialsInputStatus in duTest.LoginViewModel.isValid.getter : RxSwift.Observable&lt;duTest.LoginViewModel.CredentialsInputStatus&gt;"
+                  moduleName = "duTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/prateekkansara/Documents/Code/iOS/duTest/duTest/Login/ViewModel/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "20558CED-1953-46F9-93F1-33EB436D3CA8 - deb63c9be32779"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; duTest.LoginViewModel.CredentialsInputStatus in duTest.LoginViewModel.isValid.getter : RxSwift.Observable&lt;duTest.LoginViewModel.CredentialsInputStatus&gt;"
+                  moduleName = "duTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/prateekkansara/Documents/Code/iOS/duTest/duTest/Login/ViewModel/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "455">
+               </Location>
+               <Location
+                  uuid = "20558CED-1953-46F9-93F1-33EB436D3CA8 - deb63c9be32779"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; duTest.LoginViewModel.CredentialsInputStatus in duTest.LoginViewModel.isValid.getter : RxSwift.Observable&lt;duTest.LoginViewModel.CredentialsInputStatus&gt;"
+                  moduleName = "duTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/prateekkansara/Documents/Code/iOS/duTest/duTest/Login/ViewModel/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1010">
+               </Location>
+               <Location
+                  uuid = "20558CED-1953-46F9-93F1-33EB436D3CA8 - deb63c9be32779"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; duTest.LoginViewModel.CredentialsInputStatus in duTest.LoginViewModel.isValid.getter : RxSwift.Observable&lt;duTest.LoginViewModel.CredentialsInputStatus&gt;"
+                  moduleName = "duTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/prateekkansara/Documents/Code/iOS/duTest/duTest/Login/ViewModel/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1282">
+               </Location>
+               <Location
+                  uuid = "20558CED-1953-46F9-93F1-33EB436D3CA8 - deb63c9be32779"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; duTest.LoginViewModel.CredentialsInputStatus in duTest.LoginViewModel.isValid.getter : RxSwift.Observable&lt;duTest.LoginViewModel.CredentialsInputStatus&gt;"
+                  moduleName = "duTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/prateekkansara/Documents/Code/iOS/duTest/duTest/Login/ViewModel/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1796">
+               </Location>
+               <Location
+                  uuid = "20558CED-1953-46F9-93F1-33EB436D3CA8 - deb63c9be32779"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; duTest.LoginViewModel.CredentialsInputStatus in duTest.LoginViewModel.isValid.getter : RxSwift.Observable&lt;duTest.LoginViewModel.CredentialsInputStatus&gt;"
+                  moduleName = "duTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/prateekkansara/Documents/Code/iOS/duTest/duTest/Login/ViewModel/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "3063">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
