@@ -10,12 +10,12 @@ import Foundation
 /// Can be used for multiple default types
 class DefaultsManager {
     
-    static func get(for key : String) -> Bool{
-        if let valueForKey = UserDefaults.standard.value(forKey: key) as? Bool {
-            return valueForKey
-        }
-        return false
-    }
+//    static func get(for key : String) -> Bool{
+//        if let valueForKey = UserDefaults.standard.value(forKey: key) as? Bool {
+//            return valueForKey
+//        }
+//        return false
+//    }
     
     static func get(for key : String) -> String?{
         if let valueForKey = UserDefaults.standard.value(forKey: key) as? String {

@@ -19,21 +19,29 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setupBindings()
+        
         setDelegates()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loginViewModel = LoginViewModel()
+        
+        setupBindings()
+        setupView()
+        setupUIBindings()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        setupView()
-        
         loginViewModel.autoLoginBinding
             .observe(on: MainScheduler.instance)
             .bind{ [weak self]
             loginDetails in
-                self?.usernameTextField.rx.text.onNext(loginDetails.username)
-                self?.passwordTextField.rx.text.onNext(loginDetails.password)
+                self?.usernameTextField.text = loginDetails.username
+                self?.passwordTextField.text = loginDetails.password
         }
         .disposed(by: disposeBag)
         loginViewModel.checkAutoLogin()
@@ -44,11 +52,14 @@ class LoginViewController: UIViewController {
         
         // TODO: Remove bindings
         
+        loginViewModel.usernameRelay.dispose()
+        loginViewModel.passwordRelay.dispose()
+        
         self.usernameTextField.text = nil
         self.passwordTextField.text = nil
     }
     
-    var loginViewModel = LoginViewModel()
+    var loginViewModel : LoginViewModel!
     let disposeBag = DisposeBag()
 
     /// Updating view elements properties
@@ -104,18 +115,6 @@ class LoginViewController: UIViewController {
         }
         .disposed(by: disposeBag)
         
-        
-        usernameTextField.rx.text
-            .orEmpty
-            .bind(to: loginViewModel.usernameRelay)
-            .disposed(by: disposeBag)
-        
-        passwordTextField.rx.text
-            .orEmpty
-            .bind(to: loginViewModel.passwordRelay)
-            .disposed(by: disposeBag)
-        
-        
         // Could have bind with isEnabled property directly, but needed to update color and error message with the same binding.
         loginViewModel.isValid
             .observe(on: MainScheduler.instance)
@@ -138,6 +137,19 @@ class LoginViewController: UIViewController {
         }
         .disposed(by: disposeBag)
         
+    }
+    
+    func setupUIBindings(){
+        
+        usernameTextField.rx.text
+            .orEmpty
+            .bind(to: loginViewModel.usernameRelay)
+            .disposed(by: disposeBag)
+        
+        passwordTextField.rx.text
+            .orEmpty
+            .bind(to: loginViewModel.passwordRelay)
+            .disposed(by: disposeBag)
     }
     
     /// Showing error message or invalid credentials

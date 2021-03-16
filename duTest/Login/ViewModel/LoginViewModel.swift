@@ -115,7 +115,7 @@ class LoginViewModel : BaseViewModel{
                 if let password = String(data: loginDetails, encoding: .utf8){
                     let lCredentials = Credentials(username: username, password: password)
                        self.credentials = lCredentials
-                    self.autoLoginBinding.onNext(lCredentials)
+                        self.autoLoginBinding.onNext(lCredentials)
                        login()
                 }
             }
