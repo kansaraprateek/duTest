@@ -19,13 +19,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setupView()
         setupBindings()
         setDelegates()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        setupView()
         
         loginViewModel.autoLoginBinding
             .observe(on: MainScheduler.instance)
